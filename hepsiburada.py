@@ -35,8 +35,6 @@ driver.find_element_by_id("shoppingCart").click()
 time.sleep(2)
 items = driver.find_element_by_css_selector("#onboarding_item_list > ul").find_elements_by_tag_name("li")
 
-#ul_list = driver.find_element_by_css_selector("#onboarding_item_list > ul")
-#items = ul_list.find_elements_by_tag_name("li")
 count = 0
 for item in items:
     if str.__contains__(item.text, p1):
@@ -44,3 +42,19 @@ for item in items:
     if str.__contains__(item.text, p2):
         count += 1
 assert count == 2
+
+#
+# Q3 Answers
+#
+# 1.	List all users
+# GET https://testrequest.com/api/users
+
+# 2.	Create a new user with unique id, first name, last name, email, and role
+# POST https://testrequest.com/api/create-user?id=96d7c745-8acb-42f0-b31a-7f756207cf03&firstname=john&lastname=locke&email=johnlocke@gmail.com&role=1
+
+# 3.	Update existing user’s email
+# PUT https://testrequest.com/api/update-user?id=96d7c745-8acb-42f0-b31a-7f756207cf03&email=jh.updated@gmail.com
+
+# 4.	Delete existing user
+# DELETE https://testrequest.com/api/delete-user?id=96d7c745-8acb-42f0-b31a-7f756207cf03
+#
